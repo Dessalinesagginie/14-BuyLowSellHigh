@@ -23,6 +23,7 @@ var biggestProfit = function(stockArray, sharesBought) {
         for (let i = 1; i < stockArray.length; i++);
     };
     
+    
 }
 
 // A Call to your Biggest Profit function.
