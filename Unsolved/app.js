@@ -20,14 +20,44 @@ var biggestProfit = function(stockArray, sharesBought) {
         var maximumProfit = stockArray[1] -  stockArray[0];
 
         // Loops over the array, skipping the first value, since its already the minPrice and we can't sell when we buy
-        for (let i = 1; i < stockArray.length; i++);
-    };
+        
+        for (let i = 1; i < stockArray.length; i++) {
+
+            var currentPrice = stockArray[i];
+
+            var potentialProfit = currentPrice - minimumPrice;
+
+            // if maximumProfit is less than potentialProfit update the maximumProfit
+
+            
+            if (maximumProfit < potentialProfit) {
+
+                maxiProfit = potentialProfit
+
+            }
+            
+            if (minimumPrice > currentPrice) {
+
+                minimumPrice = currentPrice
+            } 
+        }
+
+        // multiply the maximumProfit by the number of shares to get the total
+       return maximumProfit * sharesBought;
+    }
+    else {
+        console.log("Need to have at lease 2 prices")
+    }
     
-    
+
+      
+
 }
 
 // A Call to your Biggest Profit function.
 biggestProfit(stockPrices, 10000);
+
+console.log(biggestProfit(stockPrices, 10000));
 
 // NOTE: This should return 7600,
 // because you could have bought it at 1.14 per share
